@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style_pod.css">
+    <script src="/js/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Raaga - Dive into the music world</title>
+</head>
+<body>
+    <div class="main">
+        <div class="side-bar">
+            <div class="nav">
+                <div class="nav-option">
+                    <icon><i class="fa-solid fa-house"></i></icon>
+                    <a href="/">Home</a>
+                </div>
+                <div class="nav-option">
+                    <icon><i class="fa-solid fa-magnifying-glass"></i></icon>
+                    <a href="/search">Search</a>
+                </div>
+            </div>
+            <div class="library">
+                <div class="options">
+                    <div class="lib-option">
+                        <img src="./assets/library_icon.png" alt="library icon">
+                        <a href="#">Your Library</a>
+                    </div>
+                    <div class="icons">
+                        <icon><i class="fa-solid fa-plus"></i></icon>
+                        <icon>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </icon>
+                    </div>
+                </div>
+                <div class="lib-box">
+                    <div class="box">
+                        <p class="box-p1">Create your first playlist!</p>
+                        <p class="box-p2">It's okay, we'll help you</p>
+                        <button class="badge"><a href="/playlist" style="background-color: #fff; color: #000;">Create playlist</a></button>
+                    </div>
+                    <div class="box">
+                        <p class="box-p1">Let's find some podcast to follow</p>
+                        <p class="box-p2">We'll keep you updated on new podcasts</p>
+                        <button class="badge">Browse podcasts</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="sticky-nav">
+                <div class="sticky-nav-icons">
+                    <img src="./assets/backward_icon.png" alt="backward_icon">
+                    <img src="./assets/forward_icon.png" alt="forward_icon" class="hide">
+                </div>
+                <div class="sticky-nav-options">
+                    <button class="badge hide">Explore</button>
+                    <button class="badge dark-badge"><i class="fa-regular fa-circle-down" style="margin-right: 0.5rem;"></i>Install App</button>
+                    <div class="nav-item dropdown">
+                        <div class="dropdown" id="dropdownMenu">
+                            <a><i class="fa-regular fa-user"></i></a>
+                            <div class="dropdown-list">
+                                <div class="dropdown-options">
+                                    <i class="fa-regular fa-address-card"></i>
+                                    <a href="#">Account</a>
+                                </div>
+                                <div class="dropdown-options">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                    <a href="#">Edit Profile</a>
+                                </div>
+                                <div class="dropdown-options">
+                                    <i class="fa-solid fa-gear"></i>
+                                    <a href="#">Settings</a>
+                                </div>
+                                <div class="dropdown-options">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                    <a href="#">Log out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="main_playlist">
+                <h2>List of podcasts</h2>
+                <% for(user of data) { %>
+                    <div class="artist-container">
+                        <div>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-success">
+                                <%=user.podcast_name%>
+                            </a>
+                       
+                <% } %>
+            </div>
+        </div> -->
+
+
+        <div class="main_playlist">
+            <h2>List of moods</h2>
+            <% for(user of data) { %>
+                <div class="artist-container">
+                    <img src="./assets/podcast.jpg" alt="Podcast Icon"> <!-- Placeholder Image -->
+                    <a href="mood/<%=user.mood%>" class="list-group-item list-group-item-action">
+                        <%=user.mood%>
+                    </a>
+                </div>
+            <% } %>
+        </div>
+        
+        <div class="music-player">
+            <div class="player-info">
+                <div class="player-info-player">
+                    <img src="assets/music_player_card1.jpg" class="music-player-card">
+                </div>
+                <div class="player-info-info">
+                    <a href="#" class="main">Lover</a>
+                    <a href="#" class="sub">Taylor Swift</a>
+                </div>
+                <div class="add-to-liked">
+                    <i class="fa-solid fa-heart-circle-plus"></i>
+                    <div class="extra-text text1">Add to liked songs</div>
+                </div>
+            </div>
+            <div class="playing">
+                <div class="player-controls">
+                    <i class="fas fa-random shuffle"></i>
+                    <div class="extra-text text2">Shuffle</div>
+                    <i class="fas fa-backward previous-song"></i>
+                    <div class="extra-text text3">Previous</div>
+                    <i class="fas fa-pause"></i>
+                    <i class="fas fa-forward Skip"></i>
+                    <div class="extra-text text4">Skip</div>
+                    <i class="fas fa-redo Repeat"></i>
+                    <div class="extra-text text5">Repeat</div>
+                </div>
+                <div class="time-display">0:00 / 3:45</div>
+            </div>
+            <div class="extra-features">
+                <i class="fa-solid fa-microphone"></i>
+                <i class="fa-solid fa-sliders"></i>
+                <i class="fa-solid fa-volume-high"></i>
+            </div>
+        </div>
+    </div>

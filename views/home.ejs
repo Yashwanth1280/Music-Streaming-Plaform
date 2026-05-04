@@ -1,0 +1,427 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Vibrato - Web Player for everyone</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="side-bar">
+            <div class="nav">
+                <div class="nav-option">
+                    <icon><i class="fa-solid fa-house"></i></icon>
+                    <a href="/">Home</a>
+                </div>
+                <div class="nav-option">
+                    <icon><i class="fa-solid fa-magnifying-glass"></i></icon>
+                    <a href="/search">Search</a>
+                </div>
+            </div>
+            <div class="library">
+                <div class="options">
+                    <div class="lib-option">
+                        <img src="./assets/library_icon.png" alt="library icon">
+                        <a href="playl">Your Library</a>
+                    </div>
+                    <div class="icons">
+                        <icon><i class="fa-solid fa-plus"></i></icon>
+                        <icon>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </icon>
+                    </div>
+                </div>
+                <div class="lib-box">
+                    <div class="box">
+                        <p class="box-p1">Create your first playlist!</p>
+                        <p class="box-p2">It's okay, we'll help you</p>
+                        <button class="badge" id="play">Create playlist</button>
+                    </div>
+                    <div class="box">
+                        <p class="box-p1">Let's find some podcast to follow</p>
+                        <p class="box-p2">We'll keep you updated on new podcasts</p>
+                        <button class="badge" id="podcast">Browse podcasts</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="sticky-nav">
+                <div class="sticky-nav-icons">
+                    <img src="./assets/backward_icon.png" alt="backward_icon">
+                    <img src="./assets/forward_icon.png" alt="forward_icon" class="hide">
+                </div>
+                <div class="sticky-nav-options">
+                    <button class="register">Register</button>
+                    <button class="login">login</button>
+                    <button class="badge hide">Explore</button>
+                    <button class="badge dark-badge"><i class="fa-regular fa-circle-down"
+                            style="margin-right: 0.5rem;"></i>Install App</button>
+                    <icon><i class="fa-regular fa-user"></i></icon>
+                </div>
+            </div>
+            <div class="container" style="position: relative;">
+                <h1 class="raaga-heading" style="top: 0; left: 50%; transform: translateX(-40%); text-align: center;">
+                    Raaga</h1>
+            </div>
+            <h2>Trending now near you</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./assets/card2img.jpeg" class="card-img">
+                    <p class="card-title">Top-50 Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/card3img.jpeg" class="card-img">
+                    <p class="card-title">Top-50 Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/card4img.jpeg" class="card-img">
+                    <p class="card-title">Top-50 Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks</p>
+                </div>
+
+            </div>
+            <h2>Artists</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./assets/ts.jpeg" class="card-img">
+                    <p class="card-title">Taylor Swift</p>
+                    <br>
+                    <p class="card-info">
+                        <a href="/artist/1/album" class="art" style="text-decoration: underline;">Albums</a>
+                        <a href="/artist/1/song" class="art" style="text-decoration: underline;">Songs</a>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/Eminem.jpg" class="card-img">
+                    <p class="card-title">Eminem</p>
+                    <br>
+                    <p class="card-info">
+                        <a href="/artist/2/album" class="art" style="text-decoration: underline;">Albums</a>
+                        <a href="/artist/2/song" class="art" style="text-decoration: underline;">Songs</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="./assets/od.jpg" class="card-img">
+                    <br>
+                    <p class="card-info">
+                        <a href="/artist" class="art" style="text-decoration: underline;">Show All</a>
+                    </p>
+                </div>
+
+            </div>
+            <h2>Mood</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./assets/joy.jpeg" class="card-img">
+                    <p class="card-title">Joy</p>
+                    <br>
+                    <p class="card-info">
+                        <a href="/mood/joy" style="text-decoration: underline;">Dive into the joy of music</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="./assets/Sad.jpg" class="card-img">
+                    <p class="card-title">Sad</p>
+                    <br>
+                    <p class="card-info">
+                        <a href="/mood/sad" style="text-decoration: underline;">Soul-stirring melodies</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="./assets/Emo.jpeg" class="card-img">
+                    <br>
+                    <p class="card-info">
+                        <a href="/mood" style="text-decoration: underline;">Explore more Music Emotions</a>
+                    </p>
+                </div>
+            </div>
+            <h2>Genre</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./assets/Hh.jpg" class="card-img">
+                    <p class="card-title">Hip-Hop</p>
+                    <br>
+                    <p class="card-info">
+                        <a href="/genre/Hip Hop Music" style="text-decoration: underline;">The rhythm of the streets</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="./assets/Jz.jpeg" class="card-img">
+                    <p class="card-title">Jazz</p>
+                    <br>
+                    <p class="card-info">
+                        <a href="/mood/Jazz" style="text-decoration: underline;">Immerse yourself in smooth
+                            sophistication</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="./assets/od.jpg" class="card-img">
+                    <p class="card-info">
+                        <a href="/genre" class="art" style="text-decoration: underline;">For Variety of Music Genres</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="music-player">music</div>
+    </div>
+    <script src="./js/script.js" defer></script>
+</body>
+
+</html>  -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Raaga - Dive into the music world</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="side-bar">
+            <div class="nav">
+                <div class="nav-option">
+                    <icon><i class="fa-solid fa-house"></i></icon>
+                    <a href="/">Home</a>
+                </div>
+                <div class="nav-option">
+                    <icon><i class="fa-solid fa-magnifying-glass"></i></icon>
+                    <a href="/search">Search</a>
+                </div>
+            </div>
+            <div class="library">
+                <div class="options">
+                    <div class="lib-option">
+                        <img src="./assets/library_icon.png" alt="library icon">
+                        <a href="playl">Your Library</a>
+                    </div>
+                    <div class="icons">
+                        <icon><i class="fa-solid fa-plus"></i></icon>
+                        <icon>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </icon>
+                    </div>
+                </div>
+                <div class="lib-box">
+                    <div class="box">
+                        <p class="box-p1">Create your first playlist!</p>
+                        <p class="box-p2">It's okay, we'll help you</p>
+                        <button class="badge" id="play">Create playlist</button>
+                    </div>
+                    <div class="box">
+                        <p class="box-p1">Let's find some podcast to follow</p>
+                        <p class="box-p2">We'll keep you updated on new podcasts</p>
+                        <button class="badge" id="podcast">Browse podcasts</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="sticky-nav">
+                <div class="sticky-nav-icons">
+                    <img src="./assets/backward_icon.png" alt="backward_icon">
+                    <img src="./assets/forward_icon.png" alt="forward_icon" class="hide">
+                </div>
+                <div class="sticky-nav-options">
+                    <button id="register" class="badge">Register</button>
+                    <button id="login" class="badge">Login</button>
+                    <button class="badge hide">Explore</button>
+                    <button class="badge dark-badge"><i class="fa-regular fa-circle-down"
+                            style="margin-right: 0.5rem;"></i>Install App</button>
+                            <div class="nav-item dropdown">
+                                <div class="dropdown" id="dropdownMenu">
+                                    <a><i class="fa-regular fa-user"></i></a>
+                                    <div class="dropdown-list">
+                                        <div class="dropdown-options">
+                                            <i class="fa-regular fa-address-card"></i>
+                                            <a href="#">Account</a>
+                                        </div>
+                                        <div class="dropdown-options">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                            <a href="#">Edit Profile</a>
+                                        </div>
+                                        <div class="dropdown-options">
+                                            <i class="fa-solid fa-gear"></i>
+                                            <a href="#">Settings</a>
+                                        </div>
+                                        <div class="dropdown-options">
+                                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                            <a href="#">Log out</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+            </div>
+            
+            <div class="container" style="position: relative;">
+                <h1 class="raaga-heading" style="top: 0; left: 100%; text-align: center;">
+                    Raaga</h1>
+            </div>
+            <h2>Trending now near you</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="./assets/card2img.jpeg" class="card-img">
+                        <p class="card-title">Local Artists Spotlight</p>
+                        <p class="card-info">Discover trending tracks from talented artists in your area</p>
+                    </div>
+                    <div class="card">
+                        <img src="./assets/card3img.jpeg" class="card-img">
+                        <p class="card-title">Genre Showcase</p>
+                        <p class="card-info">Explore the best of different music genres with our curated playlists</p>
+                    </div>
+                    <div class="card">
+                        <img src="./assets/card4img.jpeg" class="card-img">
+                        <p class="card-title">New Releases</p>
+                        <p class="card-info">Stay updated with the freshest music releases from your favorite artists</p>
+                    </div>
+                    
+                </div>
+                <h2>Artists</h2>
+            <div class="cards-container">
+                <!-- Taylor Swift -->
+                <div class="card">
+                    <img src="./assets/ts.jpeg" class="card-img">
+                    <p class="card-title">Taylor Swift</p>
+                    <p class="card-info">
+                        <a href="/artist/1/album" class="art" style="text-decoration: underline;">Albums</a>
+                        <a href="/artist/1/song" class="art" style="text-decoration: underline;">Songs</a>
+                    </p>
+                </div>
+                <!-- Eminem -->
+                <div class="card" style="width:10rem;">
+                    <img src="./assets/eminem.jpg" style="height:12rem;"class="card-img">
+                    <p class="card-title">Eminem</p>
+                    <p class="card-info">
+                        <a href="/artist/5/album" class="art" style="text-decoration: underline;">Albums</a>
+                        <a href="/artist/5/song" class="art" style="text-decoration: underline;">Songs</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="./assets/od.jpeg" class="card-img">
+                    <p class="card-info">
+                        <a href="/artist" class="art" style="text-decoration: underline;">Show All</a>
+                    </p>
+                </div>
+                <!-- Show All Button -->
+
+            </div>
+            <h2>Mood</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./assets/joy.jpeg" class="card-img">
+                    <p class="card-title">Joy</p>
+                <br>
+                    <p class="card-info">
+                        <a href="/mood/joy" class="art" style="text-decoration: underline;">Dive into the joy of music</a>
+                    </p>
+                </div>
+                <div class="card" style="width:11rem;">
+                    <img src="./assets/Sad.jpg" class="card-img">
+                    <p class="card-title">Sad</p>
+                    <br>
+                    <p class="card-info">
+                        <a href="/mood/sad" class="art" style="text-decoration: underline;">Soul-stirring melodies</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="./assets/Emo.jpeg" class="card-img">
+                    <br>
+                    <p class="card-info">
+                        <a href="/mood" class="art" style="text-decoration: underline;">Explore more Music Emotions</a>
+                    </p>
+                </div>
+            </div>
+            <h2>Genre</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./assets/Hh.jpg" class="card-img">
+                <p class="card-title">Hip-Hop</p>
+                    <br>
+                    <p class="card-info">
+                        <a href="/genre/Hip Hop Music" class="art" style="text-decoration: underline;">The rhythm of the streets</a>
+                    </p>
+                </div>
+                <div class="card" style="width:10rem;">
+                    <img src="./assets/Jz.jpeg" class="card-img">
+                    <p class="card-title">Jazz</p>
+                    <br>
+                    <p class="card-info">
+                        <a href="/mood/Jazz" class="art" style="text-decoration: underline;">Immerse yourself in smooth
+                            sophistication</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="./assets/rock_music.jpeg" class="card-img">
+                    <p class="card-info">
+                        <a href="/genre" class="art" style="text-decoration: underline;">For Variety of Music Genres</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="music-player">
+            <div class="player-info">
+                <div class="player-info-player">
+                    <img src="assets/music_player_card1.jpg" class="music-player-card">
+                </div>
+                <div class="player-info-info">
+                    <a href="#" class="main">Lover</a>
+                    <a href="#" class="sub">Taylor Swift</a>
+                </div>
+                <div class="add-to-liked">
+                    <i class="fa-solid fa-heart-circle-plus"></i>
+                    <div class="extra-text text1">Add to liked songs</div>
+                </div>
+            </div>
+            <div class="playing">
+                <div class="player-controls">
+                    <i class="fas fa-random shuffle"></i>
+                    <div class="extra-text text2">Shuffle</div>
+                    <i class="fas fa-backward previous-song"></i>
+                    <div class="extra-text text3">Previous</div>
+                    <i class="fas fa-pause"></i>
+                    <i class="fas fa-forward Skip"></i>
+                    <div class="extra-text text4">Skip</div>
+                    <i class="fas fa-redo Repeat"></i>
+                    <div class="extra-text text5">Repeat</div>
+                </div>
+                <div class="time-display">0:00 / 3:45</div>
+            </div>
+            <div class="extra-features">
+                <i class="fa-solid fa-microphone"></i>
+                <i class="fa-solid fa-sliders"></i>
+                <i class="fa-solid fa-volume-high"></i>
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,454 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    margin:0;
+    padding:0;
+    background-color: black;
+    color:white;
+    overflow: visible;
+  }
+  .main{
+      display: flex;
+      padding: 0.5rem;
+  }
+  .side-bar{
+      background-color: black;
+      width: 300px;
+      margin-right: 0.5rem;
+  }
+  .main-content{
+      flex: 1;
+      border-radius: 1rem;
+      overflow: hidden ;
+      padding: 0 1.5rem 0 1.5rem;
+  }
+  .music-player{
+      background-color: black;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height:3.5rem;
+  }
+  a{
+      text-decoration: none;
+  }
+  .nav{
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height:6rem;
+  padding: 0.5rem  0.75rem;
+  }
+  .nav-option{
+      line-height: 2.5rem;
+      opacity: 0.7;
+  }
+  .nav-option:hover{
+      opacity: 1;
+  }
+  .nav-option i{
+      font-size: 1.25rem;
+  }
+  .nav-option a{
+      font-size: 1rem;
+      margin-left: 1rem;
+  }
+  .library{
+      background-color: #121212;
+      border-radius: 1rem;
+      height:100%;
+      margin-top: 0.75rem;
+      padding: 0.5rem  0.75rem;
+  }
+  .options{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .lib-option{
+      opacity: 0.7;
+  }
+  .lib-option:hover{
+      opacity:1;
+  }
+  .lib-option  a{
+      font-size: 1rem;
+      margin-left: 0.5rem;
+  }
+  .lib-option img {
+      height:1.25rem;
+      width: 1.25rem;
+  }
+  .icons{
+      font-size: 1.1rem;
+      display: flex;
+  }
+  .icons i{
+      opacity:0.7;
+      margin-right: 0.5rem;
+  }
+  .icons i:hover{
+      opacity:1;
+  }
+  .box{
+      background-color: #232323;
+      border-radius: 1rem ;
+      height: 8rem;
+      margin: 1rem 0rem 1.5rem 0rem;
+      padding: 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+  }
+  .box-p1{
+      background-color: #232323;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-top: 0.5rem;
+  }
+  .box-p2{
+      background-color: #232323;
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+  }
+  .badge{
+      margin-top: 0.75rem;
+      background-color: white;
+      border-radius: 100px;
+      border: none;
+      padding: 0.25rem 1rem;
+      color: black;
+      font-weight: 700;
+      height:2rem;
+      width: fit-content;
+  }
+  .badge:hover{
+      cursor: pointer;
+      border: 2px solid grey;
+      transition: 0.1s ease-in-out;
+      overflow: visible;
+  }
+  .dark-badge{
+      background-color: black;
+      color: white;
+  }
+  .sticky-nav{
+      position: sticky;
+      top: 0;
+      background-color: #121212;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0 1rem 0;
+  }
+  .sticky-nav-options{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 1rem;
+  }
+  .sticky-nav-options button{
+      margin-right: 0.75rem;
+  }
+  @media (max-width:1000px){
+      .hide{
+          display: none;
+      }
+  }
+  .card {
+      width: 190px;
+      height: 260px;
+      border-radius: 20px;
+      background: #232323;
+      position: relative;
+      margin-right: 1rem;
+  }
+  .card:hover{
+      cursor: pointer;
+      border: 2px solid #c3c6ce;
+      transition: 0.1s ease-in-out;
+      overflow: visible;
+  }
+  h2{
+      margin-top: 1rem;
+  }
+  .cards-container{
+      display:flex;
+  }
+  .card-img{
+      width: 100%;
+      border-radius: 1.2rem;
+      overflow: hidden;
+  }
+  .card-title{
+      text-align: center;
+      background-color: #232323;
+      font-weight: 600;
+  }
+  .card-info{
+      text-align: center;
+      background-color: #232323;
+      opacity: 0.8;
+      font-size: 0.70rem;
+  }
+  .nav-item-dropdown {
+      display: inline-block;
+  }
+  .dropdown {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+  }
+  .dropdown a:hover .dropdown-list{
+      display: block;
+  }
+  .dropdown-list {
+      display: none;
+      position: absolute;
+      background-color: black;
+      top: 30px;
+      right: 0;
+      width: 8.4rem;    
+      text-align: center;
+      border: solid thin #ccc;
+      border-radius: 5px;
+      padding: 5px 0;
+      z-index: 1;
+  }
+  .dropdown-list a {
+      display: block;
+      padding: 10px;
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+  }
+  .dropdown-options{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .dropdown-list a:hover{
+      background-color: #232323;
+  }
+  .dropdown-list .dropdown-options:hover{
+      background-color: #232323;
+  }
+
+.main_playlist {
+    margin-top: 20px;
+}
+
+.artist-container {
+    margin-bottom: 30px;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+}
+.buttons button {
+    margin-top: 0.75rem;
+      background-color: white;
+      border-radius: 100px;
+      border: none;
+      padding: 0.25rem 1rem;
+      color: black;
+      font-weight: 700;
+      height:2rem;
+      width: fit-content;
+}
+.buttons button:hover{
+    cursor: pointer;
+      border: 2px solid grey;
+      transition: 0.1s ease-in-out;
+      overflow: visible;
+}
+
+.song-suggestions {
+    display: flex;
+    margin-top: 10px;
+}
+
+.song {
+    display: flex;
+    margin-right: 20px;
+}
+
+.song-image {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.song-info h3,
+.song-info p {
+    margin: 0;
+    padding: 0;
+}
+
+.song-info p {
+    color: #666;
+}
+.music-player{
+    display: flex;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    justify-content: space-between;
+    align-content: center;
+}
+.music-player-card{
+    height: 4rem;
+    width: 4rem;
+}
+.player-info{
+    display: flex;
+    align-items: center
+}
+.player-info-info{
+    margin-left: 0.3rem;
+    display: block;
+}
+.player-info-info .main{
+    font-size: 0.8rem;
+}
+.player-info-info .sub{
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+.player-info-info .main:hover{
+    text-decoration: underline;
+}
+.player-info-info .sub:hover{
+    text-decoration: underline;
+}
+.add-to-liked {
+    margin-left: 1rem;
+    display: inline-block;
+    position: relative;
+}
+.add-to-liked:hover {
+    cursor: pointer;
+}
+.add-to-liked:hover .text1 {
+    display: block;
+}
+.extra-text {
+    display: none;
+    position: absolute; 
+    bottom: 100%;
+    background-color: black;
+    color: #fff;
+    border: solid thin #4f4f4f;
+    border-radius: 5px;
+    padding: 5px; 
+    z-index: 1;
+    font-size: 12px;
+    width:max-content;
+    opacity: 0.8;
+}
+.playing{
+    width:20rem;
+    display: block;
+}
+.spotify-player {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+.player-controls {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative; 
+}
+.player-controls:hover{
+    cursor: pointer;
+}
+.time-display {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+}
+.player-controls .shuffle:hover + .text2,
+.player-controls .previous-song:hover + .text3,
+.player-controls .Skip:hover + .text4,
+.player-controls .Repeat:hover + .text5 {
+    display: block;
+}
+.text2{
+    display: none;
+    position: absolute; 
+    bottom: 100%;
+    background-color: black;
+    color: #fff;
+    border: solid thin #4f4f4f;
+    border-radius: 5px;
+    padding: 5px; 
+    z-index: 1;
+    font-size: 12px;
+    width:max-content;
+    opacity: 0.8;
+}
+.text3{
+    display: none;
+    position: absolute; 
+    bottom: 100%;
+    left: 25%;
+    background-color: black;
+    color: #fff;
+    border: solid thin #4f4f4f;
+    border-radius: 5px;
+    padding: 5px; 
+    z-index: 1;
+    font-size: 12px;
+    width:max-content;
+    opacity: 0.8;
+}
+.text4{
+    display: none;
+    position: absolute; 
+    bottom: 100%;
+    right:25%;
+    background-color: black;
+    color: #fff;
+    border: solid thin #4f4f4f;
+    border-radius: 5px;
+    padding: 5px; 
+    z-index: 1;
+    font-size: 12px;
+    width:max-content;
+    opacity: 0.8;
+}
+.text5{
+    display: none;
+    position: absolute; 
+    bottom: 100%;
+    right: 0%;
+    background-color: black;
+    color: #fff;
+    border: solid thin #4f4f4f;
+    border-radius: 5px;
+    padding: 5px; 
+    z-index: 1;
+    font-size: 12px;
+    width:max-content;
+    opacity: 0.8;
+}
+.extra-features{
+    padding-right: 2rem;
+    width: 8rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    align-items: center;
+}
+.art{
+  display: block;
+  background-color: #232323;
+  overflow: hidden;
+}

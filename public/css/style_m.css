@@ -1,0 +1,54 @@
+body {
+    background-color: #121212; /* Dark background for the whole page */
+    color: #ffffff; /* Light text for readability */
+    font-family: 'Montserrat', sans-serif; /* Ensuring font consistency */
+}
+
+.main_playlist {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.main_playlist h2 {
+    color: #1DB954; /* Accent color for headers */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.artist-container {
+    background-color: #242424; /* Slightly lighter dark shade for the card */
+    border: 1px solid #333333; /* Subtle border for definition */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for depth, adjusted for dark mode */
+    border-radius: 10px; /* Rounded corners for the card */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Space between cards */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+    overflow: hidden; /* Ensuring content fits within card */
+}
+
+.artist-container:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    border-color: #1DB954; /* Accent color for hover border */
+}
+
+.artist-container img {
+    width: 80px; /* Fixed size for images */
+    height: 80px; /* Fixed size for images */
+    object-fit: cover; /* Cover fit for no stretching */
+    border-top-left-radius: 10px; /* Matching rounded corners */
+    border-bottom-left-radius: 10px;
+}
+
+.list-group-item-action {
+    flex-grow: 1;
+    padding: 20px;
+    color: #cccccc; /* Lighter text for better contrast */
+    text-decoration: none; /* Clean link appearance */
+    font-weight: 500; /* Medium font weight for clarity */
+}
+
+.list-group-item-action:hover {
+    color: #1DB954; /* Accent color for links on hover */
+}

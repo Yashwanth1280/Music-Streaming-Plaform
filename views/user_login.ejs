@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raaga - Dive into the Music World</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #181818;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            background-color: #282828;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 350px;
+            text-align: center;
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+            color: #1db954;
+            /* Spotify green */
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #1db954;
+            /* Spotify green */
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+            font-size: 16px;
+            color: #fff;
+            background-color: #333;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #1db954;
+            /* Spotify green */
+        }
+
+        .input-group input::placeholder {
+            color: #888;
+        }
+
+        .btn {
+            background-color: #1db954;
+            /* Spotify green */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 14px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #25b960;
+            /* Slightly lighter green */
+        }
+
+        .error-message {
+            color: #dc3545;
+            margin-top: 10px;
+            display: none;
+            /* Hide error message initially */
+        }
+
+        /* Popup styling */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+            /* Hide popup initially */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .tagline {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #ccc;
+            /* Light gray */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div style="text-align: center;">
+            <h1>Raaga - Dive into the Music World</h1>
+        </div>
+        <div class="container" style="text-align: center;">
+            <h2>User Authentication</h2>
+            <form id="loginForm" action="/login" method="POST">
+                <div class="input-group">
+                    <input type="text" name="username" id="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <p id="errorMessage" class="error-message"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function to display the popup
+        function displayPopup(message) {
+            var popup = document.getElementById("popup");
+            var errorMessage = document.getElementById("errorMessage");
+            errorMessage.textContent = message;
+            popup.style.display = "flex";
+            setTimeout(function () {
+                popup.style.display = "none";
+            }, 3000); // Hide popup after 3 seconds
+        }
+
+        // Call the displayPopup function with the error message from the server
+        displayPopup("<%= message %>");
+    </script>
+</body>
+
+</html>
